@@ -1,0 +1,77 @@
+.container{
+    display: grid;
+    /* mỗi auto là 1 cột, kích thước = nhau */
+    grid-template-columns: auto auto;
+    /* Thay đổi kích thước các cột */
+    /* grid-template-columns: 100px 500px; */
+    /* grid-template-rows: auto; */
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+
+    /* Khoảng cách giữa các cột */
+    /* grid-column-gap: 10px; */
+    /* Khoảng cách giữa các hàng */
+    /* grid-row-gap: 15px; */
+
+    /* 2 dòng trên có thể viết gọn lại */
+    grid-gap: 15px 10px;
+}
+
+.item{
+    background-color: #f7f5b7;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.container2{
+    display: grid;
+    /* mỗi auto là 1 cột, kích thước = nhau */
+    grid-template-columns: auto auto auto;
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 10px;
+    /* grid-gap: 15px 10px; */
+}
+
+.container2 div{
+    background-color: #f7f5b7;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Gộp cột */
+/* .item1, 
+.item6, 
+.item8{
+    grid-column-start: 1;
+    grid-column-end: 3;
+} */
+
+/* Gộp hàng */
+.item1, .item6{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.container3{
+    display: grid;
+    /* mỗi auto là 1 cột, kích thước = nhau */
+    grid-template-columns: repeat(7, 1fr);
+    background-color: white;
+    padding: 10px;
+    /* border-radius: 10px; */
+    border: 1px solid black;
+    /* grid-gap: 15px 10px; */
+}
+
+.container3 div{
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
