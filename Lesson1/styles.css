@@ -10,9 +10,9 @@
     border-radius: 10px;
 
     /* Khoảng cách giữa các cột */
-    /* grid-column-gap: 10px; */
+    grid-column-gap: 20px;
     /* Khoảng cách giữa các hàng */
-    /* grid-row-gap: 15px; */
+    grid-row-gap: 15px;
 
     /* 2 dòng trên có thể viết gọn lại */
     grid-gap: 15px 10px;
