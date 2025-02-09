@@ -92,11 +92,14 @@ console.log('Lesson 3');
 // console.log('số lượng số lẻ: ' + dem)
 
 // Bài 5: Tính trung bình cộng các số trong khoảng [6,17]
-let tong = 0;
-let dem = 0;
-for (let i = 6; i <= 17; i++){
-    tong  = tong + i;
-    dem++;
-}
-tbc = tong / dem
-console.log('TBC: ' + tbc)
+// let tong = 0;
+// let dem = 0;
+// for (let i = 6; i <= 17; i++){
+//     tong  = tong + i;
+//     dem++;
+// }
+// tbc = tong / dem
+// console.log('TBC: ' + tbc)
+
+const m1 = document.getElementById('minh');
+m1.style.backgroundColor = 'pink';
