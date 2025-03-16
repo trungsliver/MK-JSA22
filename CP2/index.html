@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .weather-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        .weather-container h2 {
+            color: #2980b9;
+        }
+        .input-group input {
+            border-radius: 5px;
+        }
+        .btn-primary, .btn-success {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        const API_KEY = 'API here'; // Thay thế bằng API Key của bạn
+
+        function getWeatherByCity() {
+            const city = document.getElementById('cityInput').value;
+            if (city === '') return;
+            
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=vi`)
+                .then(response => response.json())
+                .then(data => displayWeather(data))
+                .catch(error => console.error('Lỗi:', error));
+        }
+
+        function getWeatherByLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    
+                    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=vi`)
+                        .then(response => response.json())
+                        .then(data => displayWeather(data))
+                        .catch(error => console.error('Lỗi:', error));
+                }, () => {
+                    alert('Không thể lấy vị trí của bạn!');
+                });
+            } else {
+                alert('Trình duyệt của bạn không hỗ trợ định vị!');
+            }
+        }
+
+        function displayWeather(data) {
+            if (data.cod !== 200) {
+                document.getElementById('weatherResult').innerHTML = `<div class="alert alert-danger">Không tìm thấy thông tin thời tiết!</div>`;
+                return;
+            }
+            
+            document.getElementById('weatherResult').innerHTML = `
+                <div class="card mt-3">
+                    <div class="card-body text-center">
+                        <h3>${data.name}, ${data.sys.country}</h3>
+                        <p><strong>Nhiệt độ:</strong> ${data.main.temp}°C</p>
+                        <p><strong>Trạng thái:</strong> ${data.weather[0].description}</p>
+                        <p><strong>Độ ẩm:</strong> ${data.main.humidity}%</p>
+                        <p><strong>Tốc độ gió:</strong> ${data.wind.speed} m/s</p>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <div class="weather-container">
+        <h2>Weather App</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="cityInput" class="form-control" placeholder="Enter city name">
+        </div>
+        <p>or</p>
+        <button class="btn btn-success mb-3" onclick="getWeatherByLocation()">Get Device Location</button>
+        <button class="btn btn-primary" onclick="getWeatherByCity()">Search</button>
+        <div id="weatherResult" class="mt-4"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
