@@ -1,17 +1,17 @@
 1. Vũ Minh Anh
-- Ý tưởng: 
+- Ý tưởng: Dự báo thời tiết
 - Slides:
 
 2. Trần Lâm Khánh
-- Ý tưởng: 
+- Ý tưởng: Thế giới di động
 - Slides:
 
 3. Hoàng Trường Minh
-- Ý tưởng: 
+- Ý tưởng: pomodoro timer
 - Slides:
 
 4. Nguyễn Thế Chương
-- Ý tưởng: 
+- Ý tưởng: app bán quần áo
 - Slides:
 
 5. Lâm Việt Huy
@@ -19,9 +19,9 @@
 - Slides:
 
 6. Vũ Huy Minh
-- Ý tưởng: 
+- Ý tưởng:  Ứng dụng Theo dõi Lượng Calories từ Thực phẩm
 - Slides:
 
 7. Phạm Duy Anh
-- Ý tưởng: 
+- Ý tưởng: Ứng dụng Theo dõi Tiền điện tử (Crypto Tracker) / Bóng đá
 - Slides:
